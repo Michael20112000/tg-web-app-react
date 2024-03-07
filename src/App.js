@@ -1,21 +1,22 @@
 import './App.css'
 import {useEffect} from 'react'
+import {useTelegram} from './hooks/useTelegram'
+import {Button} from './components/Button/Button'
+import {Header} from './components/Header/Header'
 
-const tg = window.Telegram.WebApp
 
 function App() {
+  const {handleToggleButton, tg} = useTelegram()
+
   useEffect(() => {
     tg.ready()
   }, [])
 
-  const handleClose = () => {
-    tg.close()
-  }
-
   return (
     <div className="App">
       <h1>app</h1>
-      <button onClick={handleClose}>Close</button>
+      <Header/>
+      <Button onClick={handleToggleButton}>toggle</Button>
     </div>
   )
 }
