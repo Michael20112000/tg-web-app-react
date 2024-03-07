@@ -18,5 +18,6 @@ export const useTelegram = () => {
     handleToggleButton,
     tg,
     user: tg.initDataUnsafe?.user,
+    queryId: tg.initDataUnsafe?.query_id,
   }
 }
