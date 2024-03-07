@@ -25,7 +25,7 @@ export const Form = () => {
     } else {
       tg.MainButton.show()
     }
-  }, [])
+  }, [country, street])
 
   return <form className={s.form}>
     <input className={s.input} type="text" placeholder="Country"
